@@ -41,7 +41,7 @@ public final class Connection implements HasConnectionHandlers
       {
       self.@com.teknonsys.twilio.client.Connection::fireAcceptEvent()();
       });
-    $wnd.Twilio.Device.error(function(err)
+    jso.error(function(err)
       {
       self.@com.teknonsys.twilio.client.Connection::fireErrorEvent(Ljava/lang/String;ILcom/google/gwt/core/client/JavaScriptObject;)
         (err.message.message,err.code,err.info);
