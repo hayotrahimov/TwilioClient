@@ -82,3 +82,71 @@ public SoundsConfiguration getSoundsConfiguration();
 ```
 
 The configuration object for the sounds for this device. These are the default sounds played for an incoming connection, initiating an outgoing connection, and disconnecting a connection.
+
+###com.teknonsys.twilio.client.Conenction
+
+A Connection object represents a specific connection into Twilio, such as a call. You never instantiate it directly, but it's often passed in event handlers and one is returned when you call `Device.getInstance().connect()`.
+
+```java
+public void accept();
+```
+
+Accept a pending connection.
+
+```java
+public void reject();
+```
+
+Reject a pending connection. This will cause a hangup to be issued from the client session to the dialing party. If multiple client sessions are active the pending connection will be rejected for all of them.
+
+```java
+public void disconnect();
+```
+
+Close this connection.
+
+```java
+public void mute();
+```
+
+Stop capturing audio from the microphone for this connection.
+
+```java
+public void unmute();
+```
+
+Resume capturing audio from the microphone for this connection.
+
+```java
+public void sendDigits(String digits);
+```
+
+Play DTMF tones. The digits parameter is a string and can contain the characters `0-9`, `#`, and `*`. If you're familiar with TwiML, you can think of the `sendDigits()` method as the `sendDigits` attribute in the `<Number>` Noun.
+
+```java
+public Connection.Status getStatus();
+```
+
+Return the status of this connection. The status will be one of the following strings: `PENDING`, `CONNECTING`, `OPEN` or `CLOSED`.
+
+`PENDING`
+
+The connection is incoming and hasn't yet been established.
+
+`CONNECTING`
+
+The connection is transitioning to open status.
+
+`OPEN`
+
+The connection has been established.
+
+`CLOSED`
+
+The connection has been disconnected.
+
+```java
+public CallParameters getCallParameters();
+```
+
+An object available on incoming connections that contains application parameters such as who is calling and what was dialed. These parameters are identical to those Twilio sends with a [Twilio Voice request for TwiML](http://www.twilio.com/docs/api/twiml/twilio_request#synchronous).
