@@ -1,8 +1,10 @@
 package com.teknonsys.twilio.client;
 
-public class SoundsConfiguration
+import com.google.gwt.core.client.JavaScriptObject;
+
+public final class SoundsConfiguration extends JavaScriptObject
   {
-  SoundsConfiguration() {}
+  protected SoundsConfiguration() {}
   
   public native void setIncomingEnabled(boolean enabled)
     /*-{$wnd.Twilio.Device.sounds.incoming(enabled);}-*/;

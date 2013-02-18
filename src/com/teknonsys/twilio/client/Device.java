@@ -32,7 +32,7 @@ public class Device implements HasDeviceHandlers
   public Status getStatus() {return Status.valueOf(getStatusJS().toUpperCase());}
   private native String getStatusJS() /*-{return $wnd.Twilio.Device.status()}-*/;
   public SoundsConfiguration getSoundsConfiguration()
-    {return sounds==null?sounds=new SoundsConfiguration():sounds;}
+    {return sounds==null?sounds=JavaScriptObject.createObject().cast():sounds;}
   
   static JavaScriptObject convert(Map<String,String> map)
     {
