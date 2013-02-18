@@ -150,3 +150,28 @@ public CallParameters getCallParameters();
 ```
 
 An object available on incoming connections that contains application parameters such as who is calling and what was dialed. These parameters are identical to those Twilio sends with a [Twilio Voice request for TwiML](http://www.twilio.com/docs/api/twiml/twilio_request#synchronous).
+
+##Events
+
+Standard GWT Events and Handlers are used.
+
+###Device
+
+The following Device handlers are available:
+
+* DeviceReadyHandler
+* DeviceOfflineHandler
+* IncomingConnectionHandler
+* ConnectionCanceledHandler
+* ConnectionEstablishedHandler
+* DisconnectHandler
+* PresenceHandler
+* ErrorHandler
+
+###Connection
+
+The following Connection handlers are available:
+
+* DisconnectHandler
+* AcceptHandler
+* ErrorHandler
