@@ -20,6 +20,7 @@ public final class Connection implements HasConnectionHandlers
   public void unmute() {jso.unmute();}
   public void sendDigits(String digits) {jso.sendDigits(digits);}
   public Status getStatus() {return Status.valueOf(jso.getStatus().toUpperCase());}
+  public CallParameters getCallParameters() {return jso.getCallParameters();}
   
   private HandlerManager ensureHandlers()
     {
