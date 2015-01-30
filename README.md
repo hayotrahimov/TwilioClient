@@ -37,7 +37,7 @@ All methods from version 1.1 of the Twilio client are implemented.
 The Device object is retrieved using the `getInstance()` method. It represents a "soft device”, the client that provides connections into Twilio. You need to invoke `.setup()` before using it.
 
 ```java
-public void set(String token);
+public void setup(String token);
 ```
 
 Initialize Device with a capability token (see [Twilio Client Capability Tokens](http://www.twilio.com/docs/client/capability-tokens)). This will activate the device and give it an identity and certain privileges based on the token passed. You should call this before anything else. If your token allows inbound client connections, the device will start listening for new connections when you call `.setup()`.
