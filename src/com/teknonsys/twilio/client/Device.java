@@ -86,7 +86,7 @@ public class Device implements HasDeviceHandlers
     $wnd.Twilio.Device.error(function(err)
       {
       self.@com.teknonsys.twilio.client.Device::fireErrorEvent(Ljava/lang/String;ILcom/google/gwt/core/client/JavaScriptObject;Lcom/google/gwt/core/client/JavaScriptObject;)
-        (err.message.message,err.code,err.info,err.connection);
+        (err.message,err.code,err.info,err.connection);
       });
     }-*/;
   
